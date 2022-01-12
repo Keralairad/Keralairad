@@ -7,7 +7,10 @@ class PicCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Image(image: AssetImage(image)),
+      child: Image(
+        image: AssetImage(image),
+        fit: BoxFit.cover,
+      ),
     );
   }
 }
