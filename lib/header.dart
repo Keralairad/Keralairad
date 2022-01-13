@@ -10,6 +10,8 @@ class Header extends StatelessWidget {
       height: 400,
       decoration: BoxDecoration(
         image: DecorationImage(
+          colorFilter: ColorFilter.mode(
+              Colors.black.withOpacity(0.5), BlendMode.dstATop),
           image: AssetImage('assets/HeaderPic.jpg'),
           fit: BoxFit.cover,
         ),
@@ -23,7 +25,7 @@ class Header extends StatelessWidget {
                 'Gallery',
                 style: TextStyle(
                     fontSize: 60,
-                    color: Colors.cyan[900],
+                    color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
             ),

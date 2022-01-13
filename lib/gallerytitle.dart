@@ -7,7 +7,7 @@ class GalleryTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 200,
-      height: 100,
+      height: 70,
       // color: Colors.black,
       child: Stack(
         children: [
