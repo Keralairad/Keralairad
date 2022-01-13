@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import 'package:irad_kerala_web/gallery.dart';
 
 void main() {
   runApp(MediaQuery(data: new MediaQueryData(), child: const MyApp()));
