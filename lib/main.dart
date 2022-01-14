@@ -153,7 +153,7 @@ class _MyAppState extends State<MyApp> {
                           colorFilter: ColorFilter.mode(
                               Colors.black.withOpacity(0.5), BlendMode.dstATop),
                           image: const AssetImage(
-                            'irad1.jpg',
+                            'assets/irad1.jpg',
                           ),
                           fit: BoxFit.cover,
                         ),
@@ -235,7 +235,7 @@ class _MyAppState extends State<MyApp> {
                     child: Column(
                       children: const [
                         Image(
-                          image: AssetImage('MorthLogo.jpg'),
+                          image: AssetImage('assets/MorthLogo.jpg'),
                           fit: BoxFit.contain,
                           width: 500,
                           height: 300,
@@ -260,7 +260,7 @@ class _MyAppState extends State<MyApp> {
                     child: Column(
                       children: const [
                         Image(
-                          image: AssetImage('nicsilogo.png'),
+                          image: AssetImage('assets/nicsilogo.png'),
                           fit: BoxFit.contain,
                           width: 500,
                           height: 300,
@@ -284,7 +284,7 @@ class _MyAppState extends State<MyApp> {
                     child: Column(
                       children: const [
                         Image(
-                          image: AssetImage('nic.png'),
+                          image: AssetImage('assets/nic.png'),
                           fit: BoxFit.contain,
                           width: 500,
                           height: 300,
@@ -322,7 +322,7 @@ class _MyAppState extends State<MyApp> {
                         child: Column(
                           children: const [
                             Image(
-                                image: AssetImage('Kerala_Police_Logo.png'),
+                                image: AssetImage('assets/Kerala_Police_Logo.png'),
                                 fit: BoxFit.contain,
                                 width: 400,
                                 height: 300),
@@ -346,7 +346,7 @@ class _MyAppState extends State<MyApp> {
                         child: Column(
                           children: const [
                             Image(
-                              image: AssetImage('mvilogo.png'),
+                              image: AssetImage('assets/mvilogo.png'),
                               fit: BoxFit.contain,
                               width: 400,
                               height: 300,
@@ -371,7 +371,7 @@ class _MyAppState extends State<MyApp> {
                         child: Column(
                           children: const [
                             Image(
-                              image: AssetImage('Highwaylogo.png'),
+                              image: AssetImage('assets/Highwaylogo.png'),
                               fit: BoxFit.contain,
                               width: 400,
                               height: 300,
@@ -394,7 +394,7 @@ class _MyAppState extends State<MyApp> {
                         child: Column(
                           children: const [
                             Image(
-                              image: AssetImage('Health.png'),
+                              image: AssetImage('assets/Health.png'),
                               fit: BoxFit.contain,
                               width: 400,
                               height: 300,
