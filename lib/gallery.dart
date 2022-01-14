@@ -5,10 +5,12 @@ import 'package:irad_kerala_web/picsection.dart';
 
 class Gallery extends StatelessWidget {
   //const Gallery({Key? key}) : super(key: key);
-
+  int _selectedItems = 0;
+  int header = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: ListView(children: [
         Header(),
         thickDivider,

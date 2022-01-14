@@ -64,7 +64,14 @@ class _MyAppState extends State<MyApp> {
                               child: const Text("Gallery",
                                   style: TextStyle(
                                       fontSize: 15, color: Colors.black)),
-                              onTap: () {},
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Gallery(),
+                                  ),
+                                );
+                              },
                             ),
                           )
                         : null,
