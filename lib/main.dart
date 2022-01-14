@@ -65,12 +65,17 @@ class _MyAppState extends State<MyApp> {
                         ? Title(
                             color: Colors.black,
                             child: InkWell(
-                              child: const Text(
-                                "Gallery",
-                                style: TextStyle(
-                                    fontSize: 15, color: Colors.black),
-                              ),
-                              onTap: () {},
+                              child: const Text("Gallery",
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.black)),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Gallery(),
+                                  ),
+                                );
+                              },
                             ),
                           )
                         : null,
