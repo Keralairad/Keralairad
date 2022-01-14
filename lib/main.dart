@@ -13,13 +13,15 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
+final screenWidth = window.physicalSize;
+
 class _MyAppState extends State<MyApp> {
   int _selectedItems = 0;
   int header = 1;
   @override
   Widget build(BuildContext context) {
-    // final screenWidth = MediaQuery.of(context).size;
-    // debugPrint("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&${window.physicalSize}");
+    debugPrint("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&width${screenWidth.width}");
+    debugPrint("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&height${screenWidth.height}");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -124,6 +126,10 @@ class _MyAppState extends State<MyApp> {
                                   },
                                 ),
                               ),
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              fillColor: Colors.white, filled: true
                             ),
                           ),
                         ),
@@ -149,7 +155,7 @@ class _MyAppState extends State<MyApp> {
                       ),
                     ),
                     const SizedBox(
-                      height: 220,
+                      height: 250,
                       child: Center(
                         child: Text(
                           "iRAD\n",
@@ -293,201 +299,167 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                 ]),
-                 Center(
+                Center(
                   child: Text(
                     "STAKEHOLDERS ",
                     style: TextStyle(
-                      color: Colors.red[900],
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold
-                    ),
+                        color: Colors.red[900],
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
-                Wrap(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.all(20.0),
-                      child: Column(
-                        children: const [
-                          Image(
-                            image: AssetImage('Kerala_Police_Logo.png'),
-                            fit: BoxFit.contain,
-                            width: 400,
-                            height: 300,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Text("Police Department ",
+                Padding(
+                  padding: const EdgeInsets.all(50.0),
+                  child: Wrap(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(15.0),
+                        child: Column(
+                          children: const [
+                            Image(
+                                image: AssetImage('Kerala_Police_Logo.png'),
+                                fit: BoxFit.contain,
+                                width: 400,
+                                height: 300),
+                            Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Police Department ",
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic,
                                   fontFamily: 'Open Sans',
-                                )),
-                          )
-                        ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Column(
-                        children: const [
-                          Image(
-                            image: AssetImage('mvilogo.png'),
-                            fit: BoxFit.contain,
-                            width: 400,
-                            height: 300,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Text("Transport Department ",
+                      Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Column(
+                          children: const [
+                            Image(
+                              image: AssetImage('mvilogo.png'),
+                              fit: BoxFit.contain,
+                              width: 400,
+                              height: 300,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Transport Department ",
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic,
                                   fontFamily: 'Open Sans',
-                                )),
-                          )
-                        ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Column(
-                        children: const [
-                          Image(
-                            image: AssetImage('Highwaylogo.png'),
-                            fit: BoxFit.contain,
-                            width: 400,
-                            height: 300,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Text("Highway Department ",
+                      Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Column(
+                          children: const [
+                            Image(
+                              image: AssetImage('Highwaylogo.png'),
+                              fit: BoxFit.contain,
+                              width: 400,
+                              height: 300,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text("Highway Department ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontStyle: FontStyle.italic,
+                                    fontFamily: 'Open Sans',
+                                  )),
+                            )
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Column(
+                          children: const [
+                            Image(
+                              image: AssetImage('Health.png'),
+                              fit: BoxFit.contain,
+                              width: 400,
+                              height: 300,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(10.0),
+                              child: Text(
+                                "Health Department ",
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FontStyle.italic,
                                   fontFamily: 'Open Sans',
-                                )),
-                          )
-                        ],
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.all(15.0),
-                      child: Column(
-                        children: const [
-                          Image(
-                            image: AssetImage('Health.png'),
-                            fit: BoxFit.contain,
-                            width: 400,
-                            height: 300,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(10.0),
-                            child: Text("Health Department ",
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FontStyle.italic,
-                                  fontFamily: 'Open Sans',
-                                )),
-                          )
-                        ],
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(0.1),
+                  child: BottomNavigationBar(
+                    items: const [
+                      BottomNavigationBarItem(
+                        // icon: Icon(Icons.group),
+                        icon: Text("Team",
+                            style: TextStyle(
+                                fontSize: 20,
+                                decoration: TextDecoration.underline,
+                                color: Colors.white)),
+                        label: "",
+                        tooltip: "Team",
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(0.1),
-                      child: BottomNavigationBar(
-                        items: const [
-                          BottomNavigationBarItem(
-                            // icon: Icon(Icons.group),
-                            icon: Text("Team",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    color: Colors.white)),
-                            label: "",
-                            tooltip: "Team",
-                          ),
-                          BottomNavigationBarItem(
-                            // icon: Icon(Icons.image),
-                            icon: Text("Gallery",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    color: Colors.white)),
-                            label: "",
-                            tooltip: "Gallery",
-                          ),
-                          BottomNavigationBarItem(
-                            // icon: Icon(Icons.graphic_eq),
-                            icon: Text("Statistics",
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    decoration: TextDecoration.underline,
-                                    color: Colors.white)),
-                            label: "",
-                            tooltip: "Statistics",
-                          ),
-                        ],
-                        onTap: (value) {
-                          setState(() {
-                            _selectedItems = value;
-                          });
-                        },
-                        backgroundColor: Colors.grey[900],
-                        currentIndex: _selectedItems,
+                      BottomNavigationBarItem(
+                        // icon: Icon(Icons.image),
+                        icon: Text("Gallery",
+                            style: TextStyle(
+                                fontSize: 20,
+                                decoration: TextDecoration.underline,
+                                color: Colors.white)),
+                        label: "",
+                        tooltip: "Gallery",
                       ),
-                    ),
-                  ],
+                      BottomNavigationBarItem(
+                        // icon: Icon(Icons.graphic_eq),
+                        icon: Text("Statistics",
+                            style: TextStyle(
+                                fontSize: 20,
+                                decoration: TextDecoration.underline,
+                                color: Colors.white)),
+                        label: "",
+                        tooltip: "Statistics",
+                      ),
+                    ],
+                    onTap: (value) {
+                      setState(() {
+                        _selectedItems = value;
+                      });
+                    },
+                    backgroundColor: Colors.grey[900],
+                    currentIndex: _selectedItems,
+                  ),
                 ),
               ],
             ),
           ),
         ),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   items: const [
-        //     BottomNavigationBarItem(
-        //       // icon: Icon(Icons.group),
-        //       icon: Text("Team",
-        //           style: TextStyle(
-        //               fontSize: 20,
-        //               decoration: TextDecoration.underline,
-        //               color: Colors.white)),
-        //       label: "",
-        //       tooltip: "Team",
-        //     ),
-        //     BottomNavigationBarItem(
-        //       // icon: Icon(Icons.image),
-        //       icon: Text("Gallery",
-        //           style: TextStyle(
-        //               fontSize: 20,
-        //               decoration: TextDecoration.underline,
-        //               color: Colors.white)),
-        //       label: "",
-        //       tooltip: "Gallery",
-        //     ),
-        //     BottomNavigationBarItem(
-        //       // icon: Icon(Icons.graphic_eq),
-        //       icon: Text("Statistics",
-        //           style: TextStyle(
-        //               fontSize: 20,
-        //               decoration: TextDecoration.underline,
-        //               color: Colors.white)),
-        //       label: "",
-        //       tooltip: "Statistics",
-        //     ),
-        //   ],
-        //   onTap: (value) {
-        //     setState(() {
-        //       _selectedItems = value;
-        //     });
-        //   },
-        //   backgroundColor: Colors.grey[900],
-        //   currentIndex: _selectedItems,
-        // ),
       ),
     );
   }
