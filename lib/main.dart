@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:ui';
 import 'package:irad_kerala_web/gallery.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class _MyAppState extends State<MyApp> {
   int header = 1;
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size;
+    // final screenWidth = MediaQuery.of(context).size;
+    // debugPrint("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&${window.physicalSize}");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -82,9 +84,11 @@ class _MyAppState extends State<MyApp> {
                         ? Title(
                             color: Colors.black,
                             child: InkWell(
-                              child: const Text("Statistics",
-                                  style: TextStyle(
-                                      fontSize: 15, color: Colors.black)),
+                              child: const Text(
+                                "Statistics",
+                                style: TextStyle(
+                                    fontSize: 15, color: Colors.black),
+                              ),
                               onTap: () {},
                             ),
                           )
@@ -191,7 +195,10 @@ class _MyAppState extends State<MyApp> {
                   child: Center(
                     child: Text(
                       "About iRAD",
-                      style: TextStyle(fontSize: 30, color: Colors.cyan[900]),
+                      style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.cyan[900],
+                          fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -291,13 +298,13 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                 ]),
-                const Center(
+                Center(
                   child: Text(
                     "STAKEHOLDERS ",
                     style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 30,
-                    ),
+                        color: Colors.red[900],
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 Wrap(
@@ -394,53 +401,97 @@ class _MyAppState extends State<MyApp> {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.all(0.1),
+                      child: BottomNavigationBar(
+                        items: const [
+                          BottomNavigationBarItem(
+                            // icon: Icon(Icons.group),
+                            icon: Text("Team",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    decoration: TextDecoration.underline,
+                                    color: Colors.white)),
+                            label: "",
+                            tooltip: "Team",
+                          ),
+                          BottomNavigationBarItem(
+                            // icon: Icon(Icons.image),
+                            icon: Text("Gallery",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    decoration: TextDecoration.underline,
+                                    color: Colors.white)),
+                            label: "",
+                            tooltip: "Gallery",
+                          ),
+                          BottomNavigationBarItem(
+                            // icon: Icon(Icons.graphic_eq),
+                            icon: Text("Statistics",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    decoration: TextDecoration.underline,
+                                    color: Colors.white)),
+                            label: "",
+                            tooltip: "Statistics",
+                          ),
+                        ],
+                        onTap: (value) {
+                          setState(() {
+                            _selectedItems = value;
+                          });
+                        },
+                        backgroundColor: Colors.grey[900],
+                        currentIndex: _selectedItems,
+                      ),
+                    ),
                   ],
                 ),
               ],
             ),
           ),
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              // icon: Icon(Icons.group),
-              icon: Text("Team",
-                  style: TextStyle(
-                      fontSize: 20,
-                      decoration: TextDecoration.underline,
-                      color: Colors.white)),
-              label: "",
-              tooltip: "Team",
-            ),
-            BottomNavigationBarItem(
-              // icon: Icon(Icons.image),
-              icon: Text("Gallery",
-                  style: TextStyle(
-                      fontSize: 20,
-                      decoration: TextDecoration.underline,
-                      color: Colors.white)),
-              label: "",
-              tooltip: "Gallery",
-            ),
-            BottomNavigationBarItem(
-              // icon: Icon(Icons.graphic_eq),
-              icon: Text("Statistics",
-                  style: TextStyle(
-                      fontSize: 20,
-                      decoration: TextDecoration.underline,
-                      color: Colors.white)),
-              label: "",
-              tooltip: "Statistics",
-            ),
-          ],
-          onTap: (value) {
-            setState(() {
-              _selectedItems = value;
-            });
-          },
-          backgroundColor: Colors.grey[900],
-          currentIndex: _selectedItems,
-        ),
+        // bottomNavigationBar: BottomNavigationBar(
+        //   items: const [
+        //     BottomNavigationBarItem(
+        //       // icon: Icon(Icons.group),
+        //       icon: Text("Team",
+        //           style: TextStyle(
+        //               fontSize: 20,
+        //               decoration: TextDecoration.underline,
+        //               color: Colors.white)),
+        //       label: "",
+        //       tooltip: "Team",
+        //     ),
+        //     BottomNavigationBarItem(
+        //       // icon: Icon(Icons.image),
+        //       icon: Text("Gallery",
+        //           style: TextStyle(
+        //               fontSize: 20,
+        //               decoration: TextDecoration.underline,
+        //               color: Colors.white)),
+        //       label: "",
+        //       tooltip: "Gallery",
+        //     ),
+        //     BottomNavigationBarItem(
+        //       // icon: Icon(Icons.graphic_eq),
+        //       icon: Text("Statistics",
+        //           style: TextStyle(
+        //               fontSize: 20,
+        //               decoration: TextDecoration.underline,
+        //               color: Colors.white)),
+        //       label: "",
+        //       tooltip: "Statistics",
+        //     ),
+        //   ],
+        //   onTap: (value) {
+        //     setState(() {
+        //       _selectedItems = value;
+        //     });
+        //   },
+        //   backgroundColor: Colors.grey[900],
+        //   currentIndex: _selectedItems,
+        // ),
       ),
     );
   }
